@@ -66,7 +66,7 @@ Server listening on port 3000.
 现在我们的2个service 已经运行了，在浏览器里看下
 
 可以看到2个我们自己的service, 以及**consul** 本身的service
-![My Picture 2](images/2.jpg)
+![My Picture 3](images/3.jpg)
 
 浏览器里访问客户端1，即访问这个地址
 ```
