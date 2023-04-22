@@ -20,6 +20,15 @@ f22f5e9c5449   shen100/consul-nodejs:1.0.0   "consul agent -confi…"   About an
 7d67b76f8a0f   shen100/consul-nodejs:1.0.0   "consul agent -confi…"   About an hour ago   Up About an hour   8300-8302/tcp, 8500/tcp, 8600/tcp                                         consul-server1
 ```
 
+现在这个集群已经运行起来了，我们可以在浏览器里访问下consul的ui网页, 访问这个地址
+```
+http://127.0.0.1:8500
+```
+
+看下节点，我们有5个节点
+![My Picture 1](images/1.jpg)
+
+
 进入 **consul-client1** 容器里
 ```
 exec -it consul-client1 bash
@@ -54,7 +63,10 @@ node app.js
 Server listening on port 3000.
 ```
 
-现在3个server，以及2个内部运行了nodejs应用程序的客户端已经运行起来了，可以分别访问测试下。
+现在我们的2个service 已经运行了，在浏览器里看下
+
+可以看到2个我们自己的service, 以及**consul** 本身的service
+![My Picture 2](images/2.jpg)
 
 浏览器里访问客户端1，即访问这个地址
 ```
