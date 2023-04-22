@@ -61,14 +61,14 @@ Server listening on port 3000.
 http://127.0.0.1:3001/api/service
 ```
 
-你将会看到页面显示文本 ** service1 **
+你将会看到页面显示文本 **service1**
 
 浏览器里访问客户端2，即访问这个地址
 ```
 http://127.0.0.1:3002/api/service
 ```
 
-你将会看到页面显示文本 ** service2 **
+你将会看到页面显示文本 **service2**
 
 
 
