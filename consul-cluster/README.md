@@ -20,7 +20,7 @@ f22f5e9c5449   shen100/consul-nodejs:1.0.0   "consul agent -confi…"   About an
 7d67b76f8a0f   shen100/consul-nodejs:1.0.0   "consul agent -confi…"   About an hour ago   Up About an hour   8300-8302/tcp, 8500/tcp, 8600/tcp                                         consul-server1
 ```
 
-现在这个集群已经运行起来了，我们可以在浏览器里访问下consul的ui网页, 访问这个地址
+现在整个集群已经运行起来了，我们可以在浏览器里访问下 **consul** 的网页, 访问这个地址
 ```
 http://127.0.0.1:8500
 ```
