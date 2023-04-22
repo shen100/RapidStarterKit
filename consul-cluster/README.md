@@ -1,5 +1,5 @@
 # consul-cluster
-`consul-cluster` 可以快速启动3个server组成的cluster集群，以及运行2个`consul client`
+`consul-cluster` 可以快速启动3个server组成的cluster集群，以及运行2个 **consul client**
 
 | Consul | IP |
 | ------- | ------- |
