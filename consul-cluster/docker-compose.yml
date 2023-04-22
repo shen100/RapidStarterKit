@@ -1,0 +1,86 @@
+version: '3.7'
+
+services:
+    variables:
+        VOLUME_PREFIX: /Users/liushen/dev/workspace/study/consulcluster
+
+    consulServer1:
+        image: shen100/myconsul:1.0.0
+        hostname: consul-server1
+        container_name: consul-server1
+        networks:
+            mynet:
+                ipv4_address: 172.16.10.10
+        volumes:
+            - "${VOLUME_PREFIX}:/server1/data:/consul/data"
+            - "${VOLUME_PREFIX}:/server1/log:/consul/log"
+            - "${VOLUME_PREFIX}:/server1/config:/consul/config"
+
+    consulServer2:
+        image: shen100/myconsul:1.0.0
+        hostname: consul-server2
+        container_name: consul-server2
+        networks:
+            mynet:
+                ipv4_address: 172.16.10.11
+        volumes:
+            - "${VOLUME_PREFIX}:/server2/data:/consul/data"
+            - "${VOLUME_PREFIX}:/server2/log:/consul/log"
+            - "${VOLUME_PREFIX}:/server2/config:/consul/config"
+
+    consulServer3:
+        image: shen100/myconsul:1.0.0
+        hostname: consul-server3
+        container_name: consul-server3
+        networks:
+            mynet:
+                ipv4_address: 172.16.10.12
+        volumes:
+            - "${VOLUME_PREFIX}:/server3/data:/consul/data"
+            - "${VOLUME_PREFIX}:/server3/log:/consul/log"
+            - "${VOLUME_PREFIX}:/server3/config:/consul/config"
+
+    consulClient1:
+        image: shen100/myconsul:1.0.0
+        hostname: consul-client1
+        container_name: consul-client1
+        networks:
+            mynet:
+                ipv4_address: 172.16.10.20
+        volumes:
+            - "${VOLUME_PREFIX}:/client1/data:/consul/data"
+            - "${VOLUME_PREFIX}:/client1/log:/consul/log"
+            - "${VOLUME_PREFIX}:/client1/config:/consul/config"
+        ports:
+            - "8500:8500"
+
+    consulClient2:
+        image: shen100/myconsul:1.0.0
+        hostname: consul-client2
+        container_name: consul-client2
+        networks:
+            mynet:
+                ipv4_address: 172.16.10.21
+        volumes:
+            - "${VOLUME_PREFIX}:/client2/data:/consul/data"
+            - "${VOLUME_PREFIX}:/client2/log:/consul/log"
+            - "${VOLUME_PREFIX}:/client2/config:/consul/config"
+
+    consulClient3:
+        image: shen100/myconsul:1.0.0
+        hostname: consul-client3
+        container_name: consul-client3
+        networks:
+            mynet:
+                ipv4_address: 172.16.10.22
+        volumes:
+            - "${VOLUME_PREFIX}:/client3/data:/consul/data"
+            - "${VOLUME_PREFIX}:/client3/log:/consul/log"
+            - "${VOLUME_PREFIX}:/client3/config:/consul/config"
+
+networks:
+    mynet:
+        driver: bridge
+        ipam:
+            config:
+            - subnet: 172.16.10.0/24
