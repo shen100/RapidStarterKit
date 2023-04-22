@@ -23,5 +23,7 @@ client2/data
 client2/log
 !client2/log/.gitkeep
 
-node_modules
-!node_modules/.gitkeep
+client1/app/node_modules
+client2/app/node_modules
+!client1/app/node_modules/.gitkeep
+!client2/app/node_modules/.gitkeep
